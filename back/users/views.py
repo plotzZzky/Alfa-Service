@@ -13,7 +13,6 @@ from customers.serialize import serializer_customer
 
 
 @api_view(['POST'])
-@csrf_exempt
 def register_user(request):
     try:
         password = request.data['password1']
@@ -34,7 +33,6 @@ def register_user(request):
 
 
 @api_view(['POST'])
-@csrf_exempt
 def login(request):
     try:
         password = request.data['password']
@@ -54,7 +52,6 @@ def login(request):
 
 
 @api_view(['POST'])
-@csrf_exempt
 def register_customer(request):
     try:
         password = request.data['password1']
@@ -86,7 +83,6 @@ def register_customer(request):
 
 
 @api_view(['POST'])
-@csrf_exempt
 @permission_classes([IsAuthenticated])
 def update_user(request):
     try:
